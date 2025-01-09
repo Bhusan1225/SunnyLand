@@ -6,8 +6,8 @@ using UnityEngine;
 public class playerController : MonoBehaviour
 {
 
-    float HorizontalInput;
-    float PlayerSpeed;
+    public float HorizontalInput;
+    public float PlayerSpeed;
 
     Rigidbody2D rb;
     // Start is called before the first frame update
@@ -25,7 +25,7 @@ public class playerController : MonoBehaviour
 
     void PlayerInput()
     {
-        HorizontalInput = Input.GetAxisRaw("horizontal");
+        HorizontalInput = Input.GetAxisRaw("Horizontal");
     }
 
     void playerMovement()
