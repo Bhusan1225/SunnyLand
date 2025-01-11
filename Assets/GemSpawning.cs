@@ -25,28 +25,29 @@ public class GemSpawning : MonoBehaviour
     void Update()
     {
 
+        SpawnDiamond();
 
-        
+
     }
 
     void SpawnDiamond()
     {
-        while(!isDiamondthere)
+        while (!isDiamondthere)
         {
             isDiamondthere = true;
 
             Vector2 DamondRandomPos = new Vector2(Random.Range(minSpawnPos.x, maxSpawnpos.x), Random.Range(minSpawnPos.y, maxSpawnpos.y));
-            
+
             Instantiate(diamondPrefab, DamondRandomPos, diamondPrefab.transform.rotation);
-            Invoke(nameof(DiamondVanish), DiamondVanishingTime);
+            //Invoke(nameof(DiamondVanish), DiamondVanishingTime);
 
         }
+    }
 
-        void DiamondVanish()
+        public void DiamondVanish()
         {
-            Destroy(diamondPrefab);
-            isDiamondthere = false;
             
-        }
+            isDiamondthere = false;
+        
     }
 }
