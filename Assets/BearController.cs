@@ -23,18 +23,24 @@ public class BearController : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, TargetPoint, BearSpeed * Time.deltaTime);
-
+        Vector3 Bearscale = transform.localScale;
+        
         if (transform.position == TargetPoint) 
         {
             if (TargetPoint == pointA)
             {
                 TargetPoint = pointB;
+                Bearscale.x = Mathf.Abs(transform.localScale.x);
+                //Bearscale.x = -1f * Mathf.Abs(transform.localScale.x);
             }
             else 
             {
                 TargetPoint = pointA;
+                //Bearscale.x = Mathf.Abs(transform.localScale.x);
+                Bearscale.x = -1f * Mathf.Abs(transform.localScale.x);
             }
         }
-            
+        transform.localScale = Bearscale ;
+
     }
 }
