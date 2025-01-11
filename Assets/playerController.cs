@@ -53,16 +53,17 @@ public class playerController : MonoBehaviour
 
         animator.SetFloat("Walk", Mathf.Abs(HorizontalInput));
 
-        Vector3 scale = transform.lossyScale;
+        Vector3 scale = transform.localScale;
 
-        if (HorizontalInput > 0)
+        if (HorizontalInput < 0)
         {
-            scale.x = Mathf.Abs(scale.x);
+            scale.x = -1f * Mathf.Abs(scale.x);
 
         }
         else 
         {
-            scale.x = -1f * Mathf.Abs(scale.x);
+            
+            scale.x = Mathf.Abs(scale.x);
 
         }
         transform.localScale = scale;
