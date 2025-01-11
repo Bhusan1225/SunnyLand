@@ -27,6 +27,9 @@ public class GemTrigger : MonoBehaviour
             GemSpawning gemSpawning = FindAnyObjectByType<GemSpawning>();
             gemSpawning.DiamondVanish();
             Destroy(gameObject);
+
+            ScoreManager scoreManager = FindAnyObjectByType<ScoreManager>();
+            scoreManager.InceaseScore(10);
             noDiamondThere = true;
 
 
