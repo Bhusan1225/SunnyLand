@@ -6,8 +6,8 @@ using UnityEngine;
 public class playerController : MonoBehaviour
 {
 
-    public float HorizontalInput;
-    public float VerticalInput;
+    private float HorizontalInput;
+    private float VerticalInput;
     public float PlayerSpeed;
 
 
@@ -15,18 +15,20 @@ public class playerController : MonoBehaviour
 
     //jump
     public float jumpHeight = 10f;
-    public float groundCheckDistance = 1f;
+    private float groundCheckDistance = 1f;
     public LayerMask groundLayer;
     public GameObject checkGround;
     Rigidbody2D rb;
     private bool isGrounded;
 
 
-    public Animator animator;
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
